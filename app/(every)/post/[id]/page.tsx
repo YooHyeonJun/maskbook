@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import styled from 'styled-components';
-
+import Layout from '@/app/_components/layout';
 const postInfo = {
   title: '오늘 점심 뭐 먹지..',
   date: '25.04.28',
@@ -12,13 +12,8 @@ const postInfo = {
 
 export default function PostDetail() {
   return (
-    <>
-      <TopBar>
-        <Logo>MaskBook</Logo>
-        <SignIn>Sign In</SignIn>
-      </TopBar>
+    <Layout>
 
-      <Main>
         {/* ───── 좌측(본문) ───── */}
         <Article>
           <CategoryRow>
@@ -49,9 +44,7 @@ export default function PostDetail() {
 
           <Divider />
         </Article>
-
-      </Main>
-    </>
+    </Layout>
   );
 }
 

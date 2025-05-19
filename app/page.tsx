@@ -2,6 +2,7 @@
 import Image from "next/image";
 import styled from "styled-components";
 import Link from "next/link";
+import Layout from "./_components/layout";
 const popularPostList = [
   {id:1, date:"2025-05-16", title:"점심 뭐먹지", content:"ㅈㄱㄴ", like:7},
   {id:2, date:"2025-05-16", title:"수영장에서 오줌싸는게 뭐 어때서", content:"점심 메뉴 추천좀", like:23},
@@ -11,12 +12,7 @@ const popularPostList = [
 ]
 export default function Home() {
   return (
-    <Wrapper>
-      <TopBar>
-        <Logo>Maskbook</Logo>
-        <SignInBtn>sign in</SignInBtn>
-      </TopBar>
-      <Content>
+      <Layout>
         <LeftSection>
           <SearchBoxWrapper>
             <SearchInput placeholder="" />
@@ -45,52 +41,9 @@ export default function Home() {
             <AdImage src="/ad.PNG" alt="red paint" fill />
           </AdBox>
         </RightSection>
-      </Content>
-    </Wrapper>
+      </Layout>
   );
 }
-
-const Wrapper = styled.div`
-  min-height: 100vh;
-  background: rgba(254, 239, 231, 1);
-`;
-const TopBar = styled.div`
-  width: 100%;
-  height: 100px;
-  background: rgba(0, 106, 113, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-  padding: 0 32px;
-`;
-const Logo = styled.div`
-  color: rgba(254, 239, 231, 1);
-  font-size: 40px;
-  font-weight: 400;
-`;
-const SignInBtn = styled.button`
-  background: #fff;
-  background: rgba(254, 239, 231, 1);
-  border: none;
-  border-radius: 2px;
-  font-size: 18px;
-  padding: 10px 24px;
-  cursor: pointer;
-  color: rgba(0, 106, 113, 0.6);
-`;
-const Content = styled.div`
-  display: grid;
-  grid-template-columns: 7fr 3fr;
-  gap: 3rem;
-
-  justify-content: center;
-  align-items: flex-start;
-  max-width: 1200px;
-  margin: 0 auto;
-  margin-top: 100px;
-  width: 100%;
-`;
 const LeftSection = styled.div`
   flex: 1;
   max-width: 900px;
